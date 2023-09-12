@@ -1,0 +1,26 @@
+@startuml Personaje
+class Personaje {
+    # nombre String:
+    - nivel int:
+    + Personaje(nombre: String, nivel: int)
+    + atacar(): void
+    + RealizarAccionEspecial(): void 
+}
+class Jugador{
+    - clase String:
+    + Personaje(nombre: String, nivel: int, clase: String)
+    + usarHabilidadEspecial(): void
+}
+class Enemigo {
+    - tipo String:
+    + Enemigo(nombre: String, nivel: int, tipo: String)
+    + gritar(): void
+}
+class Main {
+    + main(args: String[]): void
+
+}
+Personaje <|-- Jugador
+Personaje <|-- Enemigo
+Personaje <|-- Main
+@enduml
